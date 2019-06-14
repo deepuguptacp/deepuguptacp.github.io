@@ -1,1 +1,1 @@
-# [deepuguptacp.github.io](https://bit.ly/2XKICSw)
+# [Deepu](https://bit.ly/2XKICSw)
