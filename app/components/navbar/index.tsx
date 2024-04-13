@@ -14,7 +14,7 @@ const NavBar = () => {
         <h1 className="text-3xl font-signature ml-2">
           <a
             className="link-underline link-underline-black"
-            href=""
+            href="/"
             rel="noreferrer"
           >
             <Image
