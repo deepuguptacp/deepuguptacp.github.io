@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { NavItems } from "@/app/constants";
-import "./index.css";
 
 const NavBar = () => {
   const [nav, setNav] = useState<boolean>(false);
