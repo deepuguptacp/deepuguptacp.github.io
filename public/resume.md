@@ -43,4 +43,4 @@ Results-driven frontend developer skilled in JavaScript, React, Next.js, HTML, C
 
 ### Contact
 Email: deepugupta@example.com
-Location: Bangalore, India 
+Location: Noida, India 

@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { FaSun, FaMoon } from "react-icons/fa";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
-    // Check if theme is stored in localStorage
-    const storedTheme = localStorage.getItem("theme") || "light";
+    // Check if theme is stored in localStorage, default to dark if not set
+    const storedTheme = localStorage.getItem("theme") || "dark";
     setTheme(storedTheme);
     document.documentElement.classList.toggle("dark", storedTheme === "dark");
   }, []);
