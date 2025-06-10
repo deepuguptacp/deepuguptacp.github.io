@@ -1,12 +1,6 @@
 # Deepu Gupta
 Senior Software Engineer
 
-## Contact
-- Email: deepugupta1995@gmail.com
-- Location: Bangalore, India
-- LinkedIn: [linkedin.com/in/deepugupta1995](https://linkedin.com/in/deepugupta1995)
-- GitHub: [github.com/deepugupta1995](https://github.com/deepugupta1995)
-
 ## Summary
 Results-driven frontend developer skilled in JavaScript, React, Next.js, HTML, CSS, and Svelte. Strong understanding of UI/UX, responsive design, and performance optimization. Experienced using Cursor's AI-first workflow for rapid development and debugging.
 
@@ -23,6 +17,7 @@ Results-driven frontend developer skilled in JavaScript, React, Next.js, HTML, C
 - Revamped Paytm Gold, growing user engagement significantly
 - Introduced Daily SIP, resulting in ₹9.5Cr revenue on Akshaya Tritiya
 - Built merchant flows for Paytm Gold
+- Worked on critical task for regular MF for KYC Flows.
 
 ### Software Engineer
 **Paytm Payments Bank** | Jun 2021 – Jun 2024
@@ -35,8 +30,6 @@ Results-driven frontend developer skilled in JavaScript, React, Next.js, HTML, C
 ### Bachelor of Technology
 **NIT Patna** | 2017 – 2021
 - CGPA: 8.02
-
----
 
 ## Skills
 
@@ -63,5 +56,6 @@ Team Leadership, Problem Solving, Technical Documentation, Code Review, Mentorin
 - Image captioning using deep learning
 
 ### Contact
-Email: deepugupta@example.com
-Location: Noida, India 
+- Email: 199deepu@gmail.com
+- Contact Number: 7050102744
+- Location: Noida, India 
