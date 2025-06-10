@@ -1,65 +1,102 @@
-import Link from "next/link";
-import Image from "next/image";
+"use client";
 import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { NavItems } from "@/app/constants";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NavBar = () => {
-  const [nav, setNav] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const navItems = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Experience", path: "/experience" },
+    { name: "Projects", path: "/projects" },
+    { name: "Contact", path: "/contact" }
+  ];
 
   return (
-    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black nav border-b-2">
-      <div className="border-bottom">
-        <h1 className="text-3xl font-signature ml-2">
-          <a
-            className="link-underline link-underline-black"
-            href="/"
-            rel="noreferrer"
-          >
-            <Image
-              src="/svgIcons/home.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={24}
-              height={24}
-              priority
-            />
-          </a>
-        </h1>
-      </div>
+    <nav className="bg-white dark:bg-gray-800 shadow-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16">
+          <div className="flex items-center">
+            <Link href="/" className="text-xl font-bold text-blue-600">
+              Deepu Gupta
+            </Link>
+          </div>
 
-      <ul className="hidden md:flex">
-        {NavItems.map(({ id, link }) => (
-          <li
-            key={id}
-            className="nav-links px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 hover:text-white duration-200 link-underline"
-          >
-            <Link href={link}>{link}</Link>
-          </li>
-        ))}
-      </ul>
-
-      <div
-        onClick={() => setNav(!nav)}
-        className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden"
-      >
-        {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
-      </div>
-      {nav && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500">
-          {NavItems.map(({ id, link }) => (
-            <li
-              key={id}
-              className="px-4 cursor-pointer capitalize py-6 text-4xl"
-            >
-              <Link onClick={() => setNav(!nav)} href={link}>
-                {link}
+          {/* Desktop menu */}
+          <div className="hidden md:flex items-center space-x-4">
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                href={item.path}
+                className={`px-3 py-2 rounded-md text-sm font-medium ${
+                  pathname === item.path
+                    ? "text-blue-600 dark:text-blue-400"
+                    : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                }`}
+              >
+                {item.name}
               </Link>
-            </li>
-          ))}
-        </ul>
+            ))}
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none"
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                {isMenuOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile menu */}
+      {isMenuOpen && (
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                href={item.path}
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  pathname === item.path
+                    ? "text-blue-600 dark:text-blue-400"
+                    : "text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        </div>
       )}
-    </div>
+    </nav>
   );
 };
 
