@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"next dev\" \"npm run watch-resume\"",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
     "generate-resume": "node scripts/generate-resume.js",
-    "watch-resume": "node scripts/watch-resume.js"
+    "watch-resume": "node scripts/watch-resume.js",
+    "prebuild": "npm run generate-resume"
   },
   "dependencies": {
     "framer-motion": "^11.0.8",
