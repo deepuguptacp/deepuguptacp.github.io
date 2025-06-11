@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import emailjs from 'emailjs-com';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,8 +13,14 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log(formData);
+    emailjs.send('service_hx48q0o', 'template_6hjna8a', formData, 'z5V3dOPPY3Cm2bWA7')
+      .then((response: any) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Message sent successfully!');
+      }, (err: any) => {
+        console.log('FAILED...', err);
+        alert('Failed to send message. Please try again.');
+      });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
