@@ -57,5 +57,5 @@ Team Leadership, Problem Solving, Technical Documentation, Code Review, Mentorin
 
 ### Contact
 - Email: 199deepu@gmail.com
-- Contact Number: 7050102744
+- Phone: 7050102744
 - Location: Noida, India 

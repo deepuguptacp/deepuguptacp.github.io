@@ -16,6 +16,11 @@ const projects = [
     title: "Neural Machine Translation",
     description: "Image captioning using deep learning",
     technologies: ["Deep Learning", "Computer Vision", "NLP"]
+  },
+  {
+    title: "Personal Portfolio",
+    description: "A modern, responsive portfolio website showcasing my skills and projects.",
+    technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion"]
   }
 ];
 
