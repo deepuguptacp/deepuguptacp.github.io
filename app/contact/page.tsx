@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import emailjs from 'emailjs-com';
 
+// Initialize EmailJS
+emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_USER_ID || '');
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -13,7 +16,12 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData, 'YOUR_USER_ID')
+    emailjs.send(
+      'service_hx48q0o',
+      'template_6hjna8a',
+      formData,
+      'z5V3dOPPY3Cm2bWA7'
+    )
       .then((response: any) => {
         console.log('SUCCESS!', response.status, response.text);
         alert('Message sent successfully!');
