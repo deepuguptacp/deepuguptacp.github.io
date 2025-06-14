@@ -3,74 +3,144 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
+  /* Modern Portfolio Color Scheme */
+  --foreground-rgb: 45, 55, 72;  /* Slate-800 - Main text */
+  --background-rgb: 247, 250, 252;  /* Slate-50 - Background */
+  --card-background: 255, 255, 255;
+  --border-color: 226, 232, 240;  /* Slate-200 */
+  --hover-background: 241, 245, 249;  /* Slate-100 */
+  
+  /* Accent Colors */
+  --primary-color: 79, 70, 229;  /* Indigo-600 */
+  --primary-hover: 67, 56, 202;  /* Indigo-700 */
+  --secondary-color: 99, 102, 241;  /* Indigo-500 */
+  --accent-color: 139, 92, 246;  /* Purple-500 */
+  
+  /* Text Colors */
+  --heading-color: 30, 41, 59;  /* Slate-900 */
+  --body-color: 51, 65, 85;  /* Slate-700 */
+  --muted-color: 100, 116, 139;  /* Slate-600 */
+  --link-color: 79, 70, 229;  /* Indigo-600 */
+  --link-hover: 67, 56, 202;  /* Indigo-700 */
 }
 
 .dark {
-  --foreground-rgb: 255, 255, 255;
-  --background-rgb: 17, 24, 39;
+  --foreground-rgb: 226, 232, 240;  /* Slate-200 */
+  --background-rgb: 15, 23, 42;  /* Slate-900 */
+  --card-background: 30, 41, 59;  /* Slate-800 */
+  --border-color: 51, 65, 85;  /* Slate-700 */
+  --hover-background: 51, 65, 85;  /* Slate-700 */
+  
+  /* Dark Mode Accent Colors */
+  --primary-color: 129, 140, 248;  /* Indigo-400 */
+  --primary-hover: 165, 180, 252;  /* Indigo-300 */
+  --secondary-color: 139, 92, 246;  /* Purple-500 */
+  --accent-color: 167, 139, 250;  /* Purple-400 */
+  
+  /* Dark Mode Text Colors */
+  --heading-color: 226, 232, 240;  /* Slate-200 */
+  --body-color: 203, 213, 225;  /* Slate-300 */
+  --muted-color: 148, 163, 184;  /* Slate-400 */
+  --link-color: 129, 140, 248;  /* Indigo-400 */
+  --link-hover: 165, 180, 252;  /* Indigo-300 */
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: rgb(var(--body-color));
   background: rgb(var(--background-rgb));
 }
 
-/* Dark mode transitions */
-* {
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+/* Typography Styles */
+h1, h2, h3, h4, h5, h6 {
+  color: rgb(var(--heading-color));
+}
+
+a {
+  color: rgb(var(--link-color));
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: rgb(var(--link-hover));
+}
+
+/* Card and UI Elements */
+.bg-white {
+  background-color: rgb(var(--card-background));
+}
+
+.text-gray-900 {
+  color: rgb(var(--heading-color));
+}
+
+.text-gray-700 {
+  color: rgb(var(--body-color));
+}
+
+.text-gray-500 {
+  color: rgb(var(--muted-color));
+}
+
+.border-gray-200 {
+  border-color: rgb(var(--border-color));
+}
+
+.hover\:bg-gray-100:hover {
+  background-color: rgb(var(--hover-background));
+}
+
+/* Primary Button Styles */
+.btn-primary {
+  background-color: rgb(var(--primary-color));
+  color: white;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: rgb(var(--primary-hover));
 }
 
 /* Dark mode specific styles */
 .dark .bg-white {
-  @apply bg-gray-900;
+  background-color: rgb(var(--card-background));
 }
 
 .dark .text-gray-900 {
-  @apply text-gray-100;
+  color: rgb(var(--heading-color));
 }
 
 .dark .text-gray-700 {
-  @apply text-gray-300;
+  color: rgb(var(--body-color));
 }
 
 .dark .text-gray-500 {
-  @apply text-gray-400;
+  color: rgb(var(--muted-color));
 }
 
 .dark .border-gray-200 {
-  @apply border-gray-700;
+  border-color: rgb(var(--border-color));
 }
 
 .dark .hover\:bg-gray-100:hover {
-  @apply hover:bg-gray-800;
+  background-color: rgb(var(--hover-background));
 }
 
-.dark .hover\:text-gray-900:hover {
-  @apply hover:text-gray-100;
-}
-
-.dark .hover\:border-gray-300:hover {
-  @apply hover:border-gray-600;
-}
-
-/* Custom scrollbar for dark mode */
-.dark ::-webkit-scrollbar {
+/* Custom scrollbar */
+::-webkit-scrollbar {
   width: 10px;
 }
 
-.dark ::-webkit-scrollbar-track {
-  background: rgb(17, 24, 39);
+::-webkit-scrollbar-track {
+  background: rgb(var(--background-rgb));
 }
 
-.dark ::-webkit-scrollbar-thumb {
-  background: rgb(55, 65, 81);
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--border-color));
   border-radius: 5px;
 }
 
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: rgb(75, 85, 99);
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--hover-background));
 }
 
 @layer base {
