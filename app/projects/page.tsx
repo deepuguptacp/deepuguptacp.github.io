@@ -26,7 +26,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div className="min-h-screen p-8">
+    <div className="min-h-screen p-8  mt-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

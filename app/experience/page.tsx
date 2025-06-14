@@ -22,7 +22,8 @@ const experiences = [
         points: [
           "Revamped Paytm Gold, growing user engagement significantly",
           "Introduced Daily SIP, resulting in ₹9.5Cr revenue on Akshaya Tritiya",
-          "Built merchant flows for Paytm Gold"
+          "Built merchant flows for Paytm Gold",
+          "Worked on critical task for regular MF for KYC Flows"
         ]
       },
       {
@@ -41,41 +42,48 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <div className="min-h-screen p-8">
-      <h1 className="text-4xl font-bold mb-8">Work Experience</h1>
-      <div className="space-y-12">
-        {experiences.map((company, companyIndex) => (
-          <motion.div
-            key={companyIndex}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: companyIndex * 0.2 }}
-            className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg"
-          >
-            <h2 className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-6">{company.title}</h2>
-            <div className="space-y-8">
-              {company.roles.map((role, roleIndex) => (
-                <motion.div
-                  key={roleIndex}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: (companyIndex * 0.2) + (roleIndex * 0.1) }}
-                  className="border-l-4 border-blue-600 pl-6 ml-4"
-                >
-                  <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">{role.title}</h3>
-                  <h4 className="text-xl text-gray-700 dark:text-gray-300">{role.company}</h4>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">{role.period}</p>
-                  <ul className="list-disc list-inside space-y-2">
-                    {role.points.map((point, i) => (
-                      <li key={i} className="text-gray-700 dark:text-gray-300">{point}</li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        ))}
-      </div>
+    <div className="min-h-screen p-8 mt-16 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="max-w-4xl mx-auto"
+      >
+        <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Work Experience</h1>
+
+        <div className="space-y-8">
+          {experiences.map((company, companyIndex) => (
+            <motion.div
+              key={companyIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: companyIndex * 0.2 }}
+              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
+            >
+              <h2 className="text-2xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">{company.title}</h2>
+              <div className="space-y-8">
+                {company.roles.map((role, roleIndex) => (
+                  <motion.div
+                    key={roleIndex}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: (companyIndex * 0.2) + (roleIndex * 0.1) }}
+                    className="border-l-4 border-blue-600 pl-6 ml-4"
+                  >
+                    <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">{role.title}</h3>
+                    <h4 className="text-lg text-gray-700 dark:text-gray-300">{role.company}</h4>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">{role.period}</p>
+                    <ul className="list-disc list-inside space-y-2">
+                      {role.points.map((point, i) => (
+                        <li key={i} className="text-gray-700 dark:text-gray-300">{point}</li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
     </div>
   );
 }
