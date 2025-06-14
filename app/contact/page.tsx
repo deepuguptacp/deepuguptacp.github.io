@@ -13,10 +13,16 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    emailjs.send('service_hx48q0o', 'template_6hjna8a', formData, 'z5V3dOPPY3Cm2bWA7')
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData, 'YOUR_USER_ID')
       .then((response: any) => {
         console.log('SUCCESS!', response.status, response.text);
         alert('Message sent successfully!');
+        // Clear form fields after successful submission
+        setFormData({
+          name: "",
+          email: "",
+          message: ""
+        });
       }, (err: any) => {
         console.log('FAILED...', err);
         alert('Failed to send message. Please try again.');
@@ -91,7 +97,7 @@ export default function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                   required
                 />
               </div>
@@ -106,7 +112,7 @@ export default function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                   required
                 />
               </div>
@@ -121,7 +127,7 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                   required
                 />
               </div>
