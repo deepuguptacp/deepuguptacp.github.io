@@ -58,14 +58,14 @@ export default function Home() {
             <div className="relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
               <div className="relative">
-                <Image
-                  src="/images/profileImage2.jpeg"
+          <Image
+            src="/images/profileImage2.jpeg"
                   alt="Deepu Gupta"
                   className="rounded-full border-4 border-blue-600 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
                   width={400}
                   height={400}
-                  priority
-                />
+            priority
+          />
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600/20 to-purple-600/20 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             </div>

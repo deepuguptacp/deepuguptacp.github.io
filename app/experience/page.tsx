@@ -1,9 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const experiences = [
   {
     title: "Paytm",
+    logo: "/images/paytm-logo.png",
     roles: [
       {
         title: "Senior Software Engineer",
@@ -59,7 +61,19 @@ export default function Experience() {
               transition={{ delay: companyIndex * 0.2 }}
               className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
             >
-              <h2 className="text-2xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">{company.title}</h2>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="relative w-12 h-12">
+                  <Image
+                    src={company.logo}
+                    alt={`${company.title} logo`}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <h2 className="text-2xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  {company.title}
+                </h2>
+              </div>
               <div className="space-y-8">
                 {company.roles.map((role, roleIndex) => (
                   <motion.div

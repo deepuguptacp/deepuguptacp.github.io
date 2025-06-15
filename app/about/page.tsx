@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Skills from "../components/skills";
 
 const skills = {
   frontend: ["JavaScript", "React.js", "HTML", "CSS", "Next.js", "SCSS"],
@@ -16,18 +17,21 @@ export default function About() {
         className="max-w-4xl mx-auto"
       >
         <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">About Me</h1>
-        
+
         <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg shadow-lg mb-8 border border-gray-200 dark:border-gray-700">
           <h2 className="text-2xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">Profile Summary</h2>
           <div className="prose dark:prose-invert max-w-none">
             <p className="text-gray-700 dark:text-gray-300 mb-4">
-              Results-driven frontend developer skilled in JavaScript, React, Next.js, HTML, CSS, and Svelte.
+              I am a Senior Software Engineer with over 4 years of experience specializing in frontend development and modern web technologies. My expertise lies in building scalable, performant, and user-friendly applications using React, Next.js, and TypeScript. I have a strong foundation in JavaScript and a deep understanding of modern web development practices.
             </p>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
-              Strong understanding of UI/UX, responsive design, and performance optimization.
+              Throughout my career, I've led the development of complex web applications, focusing on creating intuitive user interfaces and optimizing application performance. I'm particularly skilled in state management, component architecture, and implementing responsive designs that work seamlessly across all devices. My experience with Node.js and SQL allows me to work effectively across the full stack when needed.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 mb-4">
+              I'm passionate about writing clean, maintainable code and following best practices in software development. I actively contribute to open-source projects and stay updated with the latest industry trends and technologies. My experience with Cursor's AI-first workflow has enhanced my productivity and problem-solving capabilities, allowing me to deliver high-quality solutions efficiently.
             </p>
             <p className="text-gray-700 dark:text-gray-300">
-              Experienced using Cursor's AI-first workflow for rapid development and debugging.
+              Beyond coding, I enjoy mentoring junior developers, participating in tech communities, and sharing knowledge through technical writing. I believe in continuous learning and am always eager to take on new challenges that push the boundaries of what's possible in web development.
             </p>
           </div>
         </div>
@@ -35,46 +39,13 @@ export default function About() {
         <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg shadow-lg mb-8 border border-gray-200 dark:border-gray-700">
           <h2 className="text-2xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">Education</h2>
           <div className="text-gray-700 dark:text-gray-300">
-            <p className="font-semibold">B.Tech, NIT Patna (2017–2021)</p>
+            <p className="font-semibold">B.Tech in Computer Science and Engineering, NIT Patna (2017–2021)</p>
             <p>CGPA: 8.02</p>
           </div>
         </div>
 
         <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
-          <h2 className="text-2xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">Skills</h2>
-          
-          <div className="mb-6">
-            <h3 className="text-xl font-medium text-gray-800 dark:text-gray-200 mb-2">Frontend</h3>
-            <div className="flex flex-wrap gap-2">
-              {skills.frontend.map((skill, index) => (
-                <span key={index} className="px-3 py-1 bg-gradient-to-r from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 text-blue-800 dark:text-blue-200 rounded-full shadow-sm">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="mb-6">
-            <h3 className="text-xl font-medium text-gray-800 dark:text-gray-200 mb-2">Other Technologies</h3>
-            <div className="flex flex-wrap gap-2">
-              {skills.otherTech.map((skill, index) => (
-                <span key={index} className="px-3 py-1 bg-gradient-to-r from-purple-100 to-purple-200 dark:from-purple-900 dark:to-purple-800 text-purple-800 dark:text-purple-200 rounded-full shadow-sm">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-medium text-gray-800 dark:text-gray-200 mb-2">UI/UX</h3>
-            <div className="flex flex-wrap gap-2">
-              {skills.uiux.map((skill, index) => (
-                <span key={index} className="px-3 py-1 bg-gradient-to-r from-green-100 to-green-200 dark:from-green-900 dark:to-green-800 text-green-800 dark:text-green-200 rounded-full shadow-sm">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
+          <Skills />
         </div>
       </motion.div>
     </div>

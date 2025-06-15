@@ -23,7 +23,7 @@ const NavBar = () => {
             <Link href="/" className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Deepu Gupta
             </Link>
-          </div>
+      </div>
 
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-4">
@@ -39,7 +39,7 @@ const NavBar = () => {
               >
                 {item.name}
               </Link>
-            ))}
+        ))}
           </div>
 
           {/* Mobile menu button */}
@@ -47,7 +47,7 @@ const NavBar = () => {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none transition-colors"
-            >
+      >
               <svg
                 className="h-6 w-6"
                 fill="none"
@@ -92,7 +92,7 @@ const NavBar = () => {
               >
                 {item.name}
               </Link>
-            ))}
+          ))}
           </div>
         </div>
       )}
