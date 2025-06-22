@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import emailjs from 'emailjs-com';
-import { SvgIcon } from "../components";
+import { SvgIcon, BackgroundAnimation } from "../components";
 
 // Initialize EmailJS
 emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_USER_ID || '');
@@ -45,11 +45,13 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen p-8 mt-16 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen p-8 mt-16 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
+      <BackgroundAnimation />
+      
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="max-w-4xl mx-auto"
+        className="max-w-4xl mx-auto relative z-10"
       >
         <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Contact Me</h1>
         

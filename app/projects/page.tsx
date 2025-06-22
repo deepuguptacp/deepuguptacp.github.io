@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { BackgroundAnimation } from "../components";
 
 const projects = [
   {
@@ -33,11 +34,13 @@ export default function Projects() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen p-8 mt-16 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen p-8 mt-16 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
+      <BackgroundAnimation />
+      
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="max-w-6xl mx-auto"
+        className="max-w-6xl mx-auto relative z-10"
       >
         <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           Projects

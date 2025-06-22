@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Skills from "../components/skills";
+import { BackgroundAnimation } from "../components";
 
 const skills = {
   frontend: ["JavaScript", "React.js", "HTML", "CSS", "Next.js", "SCSS"],
@@ -10,11 +11,13 @@ const skills = {
 
 export default function About() {
   return (
-    <div className="min-h-screen p-8 mt-16 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen p-8 mt-16 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
+      <BackgroundAnimation />
+      
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="max-w-4xl mx-auto"
+        className="max-w-4xl mx-auto relative z-10"
       >
         <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">About Me</h1>
 
