@@ -26,13 +26,13 @@ export default function Home() {
             <div className="flex gap-4 justify-center md:justify-start">
               <a
                 href="/about"
-                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="hidden md:block px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Learn More
               </a>
               <a
                 href="/contact"
-                className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="hidden md:block px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Contact Me
               </a>
@@ -59,7 +59,7 @@ export default function Home() {
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
               <div className="relative">
           <Image
-            src="/images/profileImage2.jpeg"
+            src="/images/profileImage2.jpg"
                   alt="Deepu Gupta"
                   className="rounded-full border-4 border-blue-600 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
                   width={400}

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { NavBar } from "./components";
-import ThemeToggle from "./components/theme-toggle";
+import FooterWrapper from "./components/footer-wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,10 +19,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200`}>
+      <body className={`${inter.className} min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200 flex flex-col`}>
         <NavBar />
-        {children}
-        <ThemeToggle />
+        <main className="flex-1">
+          {children}
+        </main>
+        <FooterWrapper />
       </body>
     </html>
   );

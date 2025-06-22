@@ -1,10 +1,13 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
+import { FaSun, FaMoon } from "react-icons/fa";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [theme, setTheme] = useState("dark");
   const pathname = usePathname();
 
   const navItems = [
@@ -12,8 +15,23 @@ const NavBar = () => {
     { name: "About", path: "/about" },
     { name: "Experience", path: "/experience" },
     { name: "Projects", path: "/projects" },
+    { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/contact" }
   ];
+
+  useEffect(() => {
+    // Check if theme is stored in localStorage, default to dark if not set
+    const storedTheme = localStorage.getItem("theme") || "dark";
+    setTheme(storedTheme);
+    document.documentElement.classList.toggle("dark", storedTheme === "dark");
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
+  };
 
   const isActive = (path: string) => {
     if (path === "/") {
@@ -50,10 +68,40 @@ const NavBar = () => {
                 )}
               </Link>
             ))}
+            
+            {/* Theme Toggle for Desktop */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={toggleTheme}
+              className="ml-4 p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200"
+              aria-label="Toggle theme"
+            >
+              {theme === "light" ? (
+                <FaMoon className="w-4 h-4" />
+              ) : (
+                <FaSun className="w-4 h-4" />
+              )}
+            </motion.button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile menu button and theme toggle */}
+          <div className="md:hidden flex items-center space-x-2">
+            {/* Theme Toggle for Mobile */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={toggleTheme}
+              className="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200"
+              aria-label="Toggle theme"
+            >
+              {theme === "light" ? (
+                <FaMoon className="w-5 h-5" />
+              ) : (
+                <FaSun className="w-5 h-5" />
+              )}
+            </motion.button>
+            
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none transition-colors"
