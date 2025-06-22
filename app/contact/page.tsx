@@ -65,7 +65,12 @@ export default function Contact() {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <SvgIcon name="email" className="text-blue-600 dark:text-blue-400" size="lg" />
-                <span className="text-gray-700 dark:text-gray-300">199deepu@gmail.com</span>
+                <a 
+                  href="mailto:199deepu@gmail.com"
+                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                >
+                  199deepu@gmail.com
+                </a>
               </div>
               
               <div className="flex items-center space-x-3">

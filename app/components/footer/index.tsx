@@ -54,6 +54,14 @@ const Footer = () => {
                   <SvgIcon name={social.iconName} size="md" />
                 </a>
               ))}
+              {/* Contact Icon */}
+              <Link
+                href="/contact"
+                className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                aria-label="Contact"
+              >
+                <SvgIcon name="contact" size="md" />
+              </Link>
             </div>
           </div>
         </div>
