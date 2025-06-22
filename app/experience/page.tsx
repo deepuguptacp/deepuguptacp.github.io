@@ -12,7 +12,7 @@ const experiences = [
         company: "Paytm Money",
         period: "Apr 2025 – Present",
         points: [
-          "Migrated flows from React to Svelte, improving performance",
+          "Migrated flows from React to Svelte, improving performance using Cursor AI",
           "Leading frontend efforts for the Mutual Funds H5 app across mobile platforms",
           "Building production-ready pages using AI-driven tooling"
         ]
@@ -33,6 +33,7 @@ const experiences = [
         company: "Paytm Payments Bank",
         period: "Jun 2021 – Jun 2024",
         points: [
+          "Built and optimized Paytm Payments Bank's Next.js website, improving performance and user experience",
           "Developed and maintained Netbanking panel",
           "Created reusable UI component libraries",
           "Delivered UI for OAuth and 2FA SDKs"
